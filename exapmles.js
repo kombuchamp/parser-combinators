@@ -22,6 +22,8 @@ const diceRollParser = sequenceOf(digits, str('d'), digits).map(([count, , rank]
     value: [count, rank],
 }));
 
+diceRollParser.run('2d20');
+
 const parser = sequenceOf(letters, str(':'))
     .map(results => results[0])
     .chain(type => {
